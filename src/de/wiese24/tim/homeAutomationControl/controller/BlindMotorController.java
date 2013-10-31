@@ -15,7 +15,7 @@ public class BlindMotorController extends ActorController {
 	private WindSpeed oldWindSpeed;
 
 	@Override
-	public void handleSensorState(List<SensorState> states) {
+	public void handleSensorStates(List<SensorState> states) {
 		ActorAction action = createAction(states);
 		for (Actor actor : this.actors) {
 			actor.execute(action);

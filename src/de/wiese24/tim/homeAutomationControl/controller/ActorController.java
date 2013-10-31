@@ -15,5 +15,5 @@ public abstract class ActorController {
 		this.actors.add(actor);
 	}
 	
-	public abstract void handleSensorState(List<SensorState> states);
+	public abstract void handleSensorStates(List<SensorState> states);
 }

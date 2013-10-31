@@ -1,8 +1,8 @@
 package de.wiese24.tim.homeAutomationControl.sensors.states;
 
-import de.wiese24.tim.homeAutomationControl.sensers.SensorState;
+import de.wiese24.tim.homeAutomationControl.sensors.SensorState;
 
-public class  Temperature implements SensorState {
+public class Temperature implements SensorState {
 
 	private int temperature;
 
@@ -16,4 +16,3 @@ public class  Temperature implements SensorState {
 	}
 
 }
-

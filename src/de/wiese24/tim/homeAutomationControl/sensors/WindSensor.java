@@ -1,4 +1,4 @@
-package de.wiese24.tim.homeAutomationControl.sensers;
+package de.wiese24.tim.homeAutomationControl.sensors;
 
 import de.wiese24.tim.homeAutomationControl.sensors.states.WindSpeed;
 

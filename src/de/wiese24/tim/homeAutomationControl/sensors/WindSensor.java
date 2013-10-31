@@ -8,4 +8,9 @@ public class WindSensor implements Sensor {
 	public SensorState getCurrentState() {
 		return new WindSpeed(0);
 	}
+
+	@Override
+	public SensorType getSensorType() {
+		return SensorType.WIND_SPEED;
+	}
 }

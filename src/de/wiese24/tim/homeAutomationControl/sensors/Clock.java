@@ -10,4 +10,9 @@ public class Clock implements Sensor {
 	public SensorState getCurrentState() {
 		return new Time(new Date());
 	}
+
+	@Override
+	public SensorType getSensorType() {
+		return SensorType.TIME;
+	}
 }

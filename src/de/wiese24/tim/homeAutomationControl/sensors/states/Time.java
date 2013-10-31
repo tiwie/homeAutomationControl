@@ -3,6 +3,7 @@ package de.wiese24.tim.homeAutomationControl.sensors.states;
 import java.util.Date;
 
 import de.wiese24.tim.homeAutomationControl.sensors.SensorState;
+import de.wiese24.tim.homeAutomationControl.sensors.SensorType;
 
 public class Time implements SensorState {
 
@@ -16,5 +17,10 @@ public class Time implements SensorState {
 	@Override
 	public Object getValue() {
 		return this.date;
+	}
+
+	@Override
+	public SensorType getSensorType() {
+		return SensorType.TIME;
 	}
 }

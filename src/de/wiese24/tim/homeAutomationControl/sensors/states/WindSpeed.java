@@ -1,6 +1,7 @@
 package de.wiese24.tim.homeAutomationControl.sensors.states;
 
 import de.wiese24.tim.homeAutomationControl.sensors.SensorState;
+import de.wiese24.tim.homeAutomationControl.sensors.SensorType;
 
 public class WindSpeed implements SensorState {
 
@@ -13,6 +14,11 @@ public class WindSpeed implements SensorState {
 	@Override
 	public Object getValue() {
 		return this.windSpeed;
+	}
+
+	@Override
+	public SensorType getSensorType() {
+		return SensorType.WIND_SPEED;
 	}
 
 }

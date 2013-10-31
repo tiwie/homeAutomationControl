@@ -1,4 +1,5 @@
 *.class
+.checkstyle
 bin
 .metadata
 .classpath

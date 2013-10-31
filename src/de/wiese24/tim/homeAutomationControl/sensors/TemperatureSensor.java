@@ -9,4 +9,9 @@ public class TemperatureSensor implements Sensor {
 		return new Temperature(0);
 	}
 
+	@Override
+	public SensorType getSensorType() {
+		return SensorType.TEMPERATURE;
+	}
+
 }

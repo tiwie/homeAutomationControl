@@ -1,5 +1,6 @@
 homeAutomationControl
 =====================
-erste Änderung
-zweite Änderung
+erste Ã„nderung
+zweite Ã„nderung
+dritte Ã„nderung
 

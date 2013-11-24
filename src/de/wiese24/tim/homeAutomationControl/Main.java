@@ -23,11 +23,19 @@ public class Main {
 	 */
 	public static void main(String[] args) throws InterruptedException {
 
+		System.out.println("Program start");
+		
 		MainController mainController = new MainController();
 
 		createActors(mainController);
 
 		createSensors(mainController);
+
+		runWith(mainController, 9, 3, 5, 30, "closed", "on");
+		Thread.sleep(5000);
+
+		runWith(mainController, 9, 3, 6, 0, "opended", "on");
+		Thread.sleep(5000);
 
 		runWith(mainController, 9, 3, 7, 30, "opended", "on");
 		Thread.sleep(5000);
@@ -38,11 +46,15 @@ public class Main {
 		runWith(mainController, 23, 12, 12, 0, "dimmed", "off");
 		Thread.sleep(5000);
 
-		runWith(mainController, 28, 15, 14, 30, "dimmed", "off");
+		runWith(mainController, 32, 15, 14, 30, "closed", "off");
 		Thread.sleep(5000);
 
 		runWith(mainController, 19, 2, 18, 30, "opened", "off");
 		Thread.sleep(5000);
+
+		runWith(mainController, 9, 3, 22, 30, "closed", "on");
+		
+		System.out.println("Program exit");
 	}
 
 	private static void runWith(MainController mainController, int temperature,
@@ -52,8 +64,8 @@ public class Main {
 		WeatherConditions.WIND_SPEED = windspeed;
 		Clock.NOW = createDate(hours, minutes);
 		System.out.println("It is " + hours + ":" + minutes
-				+ ".  Windspeed is " + windspeed + ", temperature is "
-				+ temperature + " °C ==> we expect Blinds are " + blindState
+				+ ".  Windspeed is " + windspeed + " m/s, temperature is "
+				+ temperature + " Â°C ==> we expect Blinds are " + blindState
 				+ ", Heating is " + heatingState);
 		mainController.update();
 	}

@@ -11,6 +11,7 @@ public class BlindMotorActor implements Actor {
 		if (action instanceof BlindMotorAction) {
 			BlindMotorActionValue open = (BlindMotorActionValue) action.getActionValue();
 			String executedAction = "";
+			//define for wich status wich text printed
 			switch (open){
 			case CLOSE:
 				executedAction = "closed";
@@ -26,6 +27,7 @@ public class BlindMotorActor implements Actor {
 				break;
 			}
 
+			//Write in wich mode the Blind is
 			System.out.println("Switched Blind to mode " + executedAction);
 		}
 

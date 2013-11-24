@@ -9,6 +9,7 @@ public class HeatingValveActor implements Actor {
 	public void execute(ActorAction action) {
 		if (action instanceof OnOffAction) {
 			Boolean on = (Boolean) action.getActionValue();
+			//print in which status the heating is
 			System.out.println("Switch heating "
 					+ (on.booleanValue() ? " on!" : " off"));
 		}

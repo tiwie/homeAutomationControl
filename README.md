@@ -1,6 +1,4 @@
 homeAutomationControl
 =====================
-erste Änderung
-zweite Änderung
-dritte Änderung
-
+This is a Home-Automation-Control in Java.
+ToDo: class named WeatherConditions

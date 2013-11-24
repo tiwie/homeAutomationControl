@@ -4,7 +4,7 @@ import de.wiese24.tim.homeAutomationControl.sensors.SensorState;
 import de.wiese24.tim.homeAutomationControl.sensors.SensorType;
 
 public class Temperature implements SensorState {
-
+	//ToDo: generate the temperature
 	private int temperature;
 
 	public Temperature(int temperature) {

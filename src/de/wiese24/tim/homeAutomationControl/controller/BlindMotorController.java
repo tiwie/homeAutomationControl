@@ -20,6 +20,7 @@ public class BlindMotorController extends ActorController {
 
 	@Override
 	public void handleSensorStates(List<SensorState> states) {
+		// create new Action
 		ActorAction action = createAction(states);
 		for (Actor actor : this.actors) {
 			actor.execute(action);
@@ -64,8 +65,8 @@ public class BlindMotorController extends ActorController {
 				break;
 			case TIME:
 				Date date = (Date) state.getValue();
-				// finde heraus, ob es nach 06:00 a.m. Uhr ist oder nach 6:00
-				// p.m.
+				// find out if it is after 06:00 a.m. o´clock or after 6:00
+				// p.m. o´clock
 				break;
 			default:
 				break;

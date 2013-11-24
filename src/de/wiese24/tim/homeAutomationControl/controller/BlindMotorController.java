@@ -11,8 +11,6 @@ import de.wiese24.tim.homeAutomationControl.actors.actions.BlindMotorAction;
 import de.wiese24.tim.homeAutomationControl.actors.actions.BlindMotorActionValue;
 import de.wiese24.tim.homeAutomationControl.sensors.SensorState;
 import de.wiese24.tim.homeAutomationControl.sensors.SensorType;
-import de.wiese24.tim.homeAutomationControl.sensors.states.Temperature;
-import de.wiese24.tim.homeAutomationControl.sensors.states.WindSpeed;
 
 public class BlindMotorController extends ActorController {
 
@@ -50,9 +48,9 @@ public class BlindMotorController extends ActorController {
 			}
 			break;
 		case CLOSE:
-			if (checkOpen(states)){
+			if (checkOpen(states)) {
 				this.currentState = BlindMotorActionValue.OPEN;
-			} else if(checkDim(states)){
+			} else if (checkDim(states)) {
 				this.currentState = BlindMotorActionValue.DIM;
 			}
 			break;
@@ -79,14 +77,12 @@ public class BlindMotorController extends ActorController {
 
 			int temperature = ((Integer) this.getSensorValue(states,
 					SensorType.TEMPERATURE)).intValue();
-			if (temperature < 20 ) {
+			if (temperature < 20) {
 				return true;
 			}
 		}
 		return false;
 	}
-	
-	
 
 	private boolean checkClose(List<SensorState> states) {
 		// first check time
@@ -122,17 +118,6 @@ public class BlindMotorController extends ActorController {
 			return true;
 		}
 		return false;
-	}
-
-	private Object getSensorValue(List<SensorState> states,
-			SensorType sensorType) {
-		for (SensorState state : states) {
-			SensorType type = state.getSensorType();
-
-			if (type == sensorType)
-				return state.getValue();
-		}
-		return null;
 	}
 
 	private boolean isDay(Date date) {

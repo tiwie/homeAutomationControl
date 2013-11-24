@@ -5,7 +5,9 @@ import java.util.Date;
 import java.util.List;
 
 import de.wiese24.tim.homeAutomationControl.actors.BlindMotorActor;
+import de.wiese24.tim.homeAutomationControl.actors.HeatingValveActor;
 import de.wiese24.tim.homeAutomationControl.controller.BlindMotorController;
+import de.wiese24.tim.homeAutomationControl.controller.HeatingValveController;
 import de.wiese24.tim.homeAutomationControl.controller.MainController;
 import de.wiese24.tim.homeAutomationControl.sensors.Clock;
 import de.wiese24.tim.homeAutomationControl.sensors.Sensor;
@@ -29,24 +31,29 @@ public class Main {
 		blindMotorController.addActor(blind2);
 		mainController.addController(blindMotorController);
 
+		HeatingValveController heatingValveController = new HeatingValveController();
+		HeatingValveActor valve1 = new HeatingValveActor();
+		HeatingValveActor valve2 = new HeatingValveActor();
+		heatingValveController.addActor(valve1);
+		heatingValveController.addActor(valve2);
+		mainController.addController(heatingValveController);
+
 		// create sensors
 		List<Sensor> sensors = getSensors();
+
+		WeatherConditions.TEMPERATURE = 9;
+		WeatherConditions.WIND_SPEED = 19;
+		Clock.NOW = new Date();
+
+		mainController.handleSensorStates(getCurrentStates(sensors));
 
 		WeatherConditions.TEMPERATURE = 10;
 		WeatherConditions.WIND_SPEED = 19;
 		Clock.NOW = new Date();
 
 		mainController.handleSensorStates(getCurrentStates(sensors));
-		
-		
-		WeatherConditions.TEMPERATURE = 25;
-		WeatherConditions.WIND_SPEED = 19;
-		Clock.NOW = new Date();
 
-		mainController.handleSensorStates(getCurrentStates(sensors));
-		
-
-		WeatherConditions.TEMPERATURE = 32;
+		WeatherConditions.TEMPERATURE = 20;
 		WeatherConditions.WIND_SPEED = 19;
 		Clock.NOW = new Date();
 

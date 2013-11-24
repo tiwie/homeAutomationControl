@@ -125,7 +125,7 @@ public class BlindMotorController extends ActorController {
 		GregorianCalendar cal = new GregorianCalendar();
 		cal.setTime(date);
 		int hourOfDay = cal.get(Calendar.HOUR_OF_DAY);
-		if (hourOfDay >= 6 || hourOfDay < 22) {
+		if (hourOfDay >= 6 && hourOfDay < 22) {
 			return true;
 		}
 		return false;

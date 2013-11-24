@@ -6,7 +6,7 @@ public class TemperatureSensor implements Sensor {
 
 	@Override
 	public SensorState getCurrentState() {
-		return new Temperature(0);
+		return new Temperature(WeatherConditions.TEMPERATURE);
 	}
 
 	@Override

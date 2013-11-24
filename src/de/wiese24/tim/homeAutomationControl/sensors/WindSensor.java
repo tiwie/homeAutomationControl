@@ -6,7 +6,7 @@ public class WindSensor implements Sensor {
 
 	@Override
 	public SensorState getCurrentState() {
-		return new WindSpeed(0);
+		return new WindSpeed(WeatherConditions.WIND_SPEED);
 	}
 
 	@Override

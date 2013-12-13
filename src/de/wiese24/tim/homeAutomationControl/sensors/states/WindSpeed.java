@@ -4,7 +4,6 @@ import de.wiese24.tim.homeAutomationControl.sensors.SensorState;
 import de.wiese24.tim.homeAutomationControl.sensors.SensorType;
 
 public class WindSpeed implements SensorState {
-	//ToDo: generate a windSpeed
 	private int windSpeed;
 
 	public WindSpeed(int windSpeed) {

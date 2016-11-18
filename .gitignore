@@ -2,7 +2,6 @@
 .checkstyle
 bin
 .metadata
-.classpath
 # Package Files #
 *.jar
 *.war
